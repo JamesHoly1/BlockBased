@@ -19,7 +19,7 @@ export default function Home() {
             height={70}
             priority
         />
-        <h2 className={`text-[44px] sm:text-[70px] w-4/5 sm:w-2/3 text-center leading-[60px] sm:leading-[80px] ${montserrat.className}`}>The Central Hub for <span className="text-slate-400">Everything</span> Crypto</h2>
+        <h2 className={`text-[44px] sm:text-[70px] w-4/5 sm:w-2/3 text-center leading-[60px] sm:leading-[80px] ${montserrat.className}`}>The Discovery <span className="text-slate-400">Layer</span> of Crypto</h2>
         <h4 className={`text-md text-center border border-gray-400/50 rounded-lg py-1.5 px-2 ${montserrat.className}`}>Coming soon</h4>
       </main>
     </div>
