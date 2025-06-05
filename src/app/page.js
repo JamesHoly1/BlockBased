@@ -20,19 +20,7 @@ export default function Home() {
             priority
         />
         <h2 className={`text-[44px] sm:text-[70px] w-4/5 sm:w-2/3 text-center leading-[60px] sm:leading-[80px] ${montserrat.className}`}>The Central Hub for <span className="text-slate-400">Everything</span> Crypto</h2>
-        <div className="flex flex-col justify-center gap-4" >
-          <ol className="list-inside list-decimal text-md/6 text-center">
-            <li className={`text-lg mb-2 tracking-[-.01em] ${montserrat.className}`}>
-              Follow @blockbased_ on X
-            </li>
-            <li className={`text-lg mb-2 tracking-[-.01em] ${montserrat.className}`}>
-              Turn notifs on & engage
-            </li>
-            <li className={`text-lg mb-2 tracking-[-.01em] ${montserrat.className}`}>
-              Share us everywhere using #BlockBasedLaunch
-            </li>
-          </ol>
-        </div>
+        <h4 className={`text-md text-center border border-gray-400/50 rounded-lg py-1.5 px-2 ${montserrat.className}`}>Coming soon</h4>
       </main>
     </div>
   );
