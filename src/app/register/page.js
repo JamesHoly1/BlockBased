@@ -25,7 +25,7 @@ export default function Register() {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
       
-      <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
         <main className="w-full max-w-2xl mx-auto py-12 sm:py-16">
           {/* Header */}
           <div className="text-center mb-12">
