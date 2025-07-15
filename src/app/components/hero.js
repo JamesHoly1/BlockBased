@@ -36,7 +36,7 @@ export default function Hero() {
           </div>
 
           {/* Arrow */}
-          <div className="flex justify-center pt-8 sm:pt-12">
+          <div className="flex justify-center pt-8 sm:pt-8">
             <div className="text-green-400 text-6xl sm:text-7xl lg:text-8xl">
               ↓
             </div>

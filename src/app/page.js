@@ -4,16 +4,11 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[url('/blockbg7.png')] bg-cover bg-center bg-fixed">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/85" />
-      
-      <div className="relative min-h-screen">
+    <div className="bg-gradient-to-b from-black/85 via-black/75 to-black/85">
         {/* Hero Section */}
         <Hero />
-
         {/* Apply to be Listed Section */}
-        <div className="relative py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="relative pt-8 pb-18 lg:py-20 px-4 sm:px-6 lg:px-8">
           {/* Background elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-gradient-to-r from-purple-400/5 to-pink-400/5 rounded-full blur-3xl"></div>
@@ -65,8 +60,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-      </div>
     </div>
   );
 }
