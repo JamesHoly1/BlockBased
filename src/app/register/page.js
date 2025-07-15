@@ -2,7 +2,8 @@
 
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -10,7 +11,13 @@ const montserrat = Montserrat({
 });
 
 export default function Register() {
+  const router = useRouter();
   const [socialFields, setSocialFields] = useState([{ platform: '', handle: '' }]);
+
+  // Redirect to Google Forms application
+  useEffect(() => {
+    window.location.href = 'https://forms.gle/mxczjpp6CgLuNoRe8';
+  }, []);
 
   const addSocialField = () => {
     setSocialFields([...socialFields, { platform: '', handle: '' }]);

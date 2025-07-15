@@ -22,7 +22,7 @@ export default function Hero() {
           {/* Second Question - Are you crypto Infrastructure? */}
           <div className="text-center">
             <h2 className={`text-[46px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[88px] font-bold leading-[0.95] tracking-tight ${montserrat.className}`}>
-              <span className="text-slate-100 drop-shadow-lg">Are you crypto</span> <br />
+              <span className="text-slate-100 drop-shadow-lg">Blockchain</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 inline-block drop-shadow-lg">Infrastructur</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 drop-shadow-lg">e</span><span className="text-slate-100 drop-shadow-lg ml-2">?</span>
             </h2>
           </div>

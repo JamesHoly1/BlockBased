@@ -49,7 +49,9 @@ export default function Home() {
               
               {/* Application Button */}
               <Link
-                href="/register"
+                href="https://forms.gle/mxczjpp6CgLuNoRe8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-4 sm:py-5 text-xl sm:text-2xl font-semibold text-white border border-white/40 hover:border-orange-400/80 rounded-lg backdrop-blur-sm transition-all duration-300 hover:text-orange-300 hover:bg-white/5"
               >
                 <span className="relative z-10 flex items-center">
