@@ -99,7 +99,7 @@ export default function Home() {
       {/* Header */}
       <Header />
       {/* Memecoins Section */}
-      <section className="flex flex-col justify-center items-center h-full w-full px-4 sm:px-6 lg:px-8">
+      <section className="flex flex-col justify-center items-center h-full w-full mt-4 sm:mt-0 px-4 sm:px-6 lg:px-8">
         <div className="relative max-w-7xl w-full flex flex-col items-center justify-center">
           <div className="max-w-4xl w-full text-center flex flex-col items-center justify-center">
             <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 ${montserrat.className} text-slate-200 flex items-center`}>
