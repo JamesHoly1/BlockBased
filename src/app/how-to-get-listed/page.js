@@ -21,7 +21,7 @@ export default function HowToGetListed() {
               How to Get Listed
             </h1>
             <p className="text-xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed mb-4">
-              BlockBased is the only exclusive memecoin aggregator. Only memecoins that truly deserve a place will be listed.
+              BlockBased is the premium memecoin aggregator. Only memecoins that truly deserve a place will be listed.
             </p>
             <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-2 border border-purple-400/20 mb-8">
               <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>

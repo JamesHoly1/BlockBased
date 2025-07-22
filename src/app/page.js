@@ -35,14 +35,14 @@ export default function Home() {
       name: "Bonk",
       cashtag: "$BONK",
       profileImage: "/bonklogo.jpg",
-      description: "The dog coin that took Solana by storm."
+      description: "The dog coin that took Solana by storm"
     },
     {
       id: 11,
       name: "Pepe",
       cashtag: "$PEPE",
       profileImage: "/pepelogo.jpg",
-      description: "The most viral frog in crypto."
+      description: "The most viral frog in crypto"
     },
     {
       id: 4,
@@ -88,10 +88,10 @@ export default function Home() {
     },
     {
       id: 8,
-      name: "SPX6900",
-      cashtag: "$SPX",
-      profileImage: "/spx6900logo.png",
-      description: 'Imagine the power of the whole entire stock market put inside little tiny crypto coins'
+      name: "dogwifhat",
+      cashtag: "$WIF",
+      profileImage: "/wiflogo.jpg",
+      description: 'dogwifhat vibes wif frens onchain'
     }
   ];
   return (
