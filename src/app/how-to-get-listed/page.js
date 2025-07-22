@@ -86,7 +86,7 @@ export default function HowToGetListed() {
                     Active Team Engagement
                   </h3>
                   <p className="text-slate-300">
-                    Project&apos;s must have an active team that posts regularly on <span className="text-blue-400 font-semibold">Twitter</span>.
+                    Project&apos;s must have an active team that posts regularly on <span className="text-blue-400 font-semibold">X</span>.
                   </p>
                 </div>
               </div>
