@@ -120,7 +120,7 @@ export default function Home() {
                         alt={coin.name}
                         width={80}
                         height={80}
-                        className="w-14 h-14 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 transition-colors duration-200"
+                        className="w-16 h-16 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 transition-colors duration-200"
                       />
                     </div>
                     <div className="flex-1 min-w-0 hidden sm:block">
