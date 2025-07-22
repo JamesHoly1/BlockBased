@@ -2,12 +2,16 @@
 
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function ProjectProfile() {
+  // Redirect to home page - page not accessible yet
+  redirect('/');
+  
   const params = useParams();
   const { category, slug } = params;
   const [project, setProject] = useState(null);
@@ -419,9 +423,11 @@ export default function ProjectProfile() {
           {/* Project Header */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8 mb-12">
             <div className="flex items-center space-x-6">
-              <img 
+              <Image 
                 src={project.profileImage} 
                 alt={project.name}
+                width={96}
+                height={96}
                 className="w-24 h-24 rounded-2xl object-cover border-2 border-slate-400/30"
               />
               <div>

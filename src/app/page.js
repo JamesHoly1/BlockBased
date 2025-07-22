@@ -91,7 +91,7 @@ export default function Home() {
       name: "SPX6900",
       cashtag: "$SPX",
       profileImage: "/spx6900logo.png",
-      description: "Imagine the power of the whole entire stock market put inside little tiny crypto coins"
+      description: 'Imagine the power of the whole entire stock market put inside little tiny crypto coins'
     }
   ];
   return (
@@ -114,9 +114,11 @@ export default function Home() {
               <Link href={`/projects/memes/${coin.name.toLowerCase().replace(/\s+/g, '-')}`} key={coin.id} className="group block">
                 <div className="relative bg-gradient-to-br from-black/70 to-black/60 backdrop-blur-lg rounded-xl border border-purple-400/10 p-4 group-hover:border-purple-400/30 transition-all duration-300 group-hover:scale-[1.01]">
                   <div className="flex items-center space-x-3">
-                    <img 
+                    <Image 
                       src={coin.profileImage} 
                       alt={coin.name}
+                      width={80}
+                      height={80}
                       className="w-20 h-20 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 group-hover:border-purple-400/40 transition-colors duration-200"
                     />
                     <div className="flex-1 min-w-0 hidden sm:block">

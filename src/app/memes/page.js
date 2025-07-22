@@ -2,11 +2,16 @@
 
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
-import { useState } from 'react';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { redirect } from 'next/navigation';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function MemesPage() {
+  // Redirect to home page - page not accessible yet
+  redirect('/');
+  
   const [marketCapFilter, setMarketCapFilter] = useState('all');
 
   // Sample memecoin data
@@ -460,9 +465,11 @@ export default function MemesPage() {
                 {/* Header with profile and basic info */}
                 <div className="flex items-start space-x-4 mb-4">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src={coin.profileImage} 
                       alt={coin.name}
+                      width={64}
+                      height={64}
                       className="w-16 h-16 rounded-xl object-cover border-2 border-purple-400/30 group-hover:border-purple-400/50 transition-colors duration-300"
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
@@ -513,7 +520,7 @@ export default function MemesPage() {
                       rel="noopener noreferrer"
                       className="w-8 h-8 bg-gradient-to-r from-black to-gray-800 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200"
                     >
-                      <img src="/xlogo.svg" alt="X (Twitter)" className="w-4 h-4" />
+                      <Image src="/xlogo.svg" alt="X (Twitter)" width={16} height={16} className="w-4 h-4" />
                     </a>
                     <a 
                       href={coin.socialLinks.website} 

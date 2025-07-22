@@ -1,10 +1,14 @@
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
+import Image from 'next/image';
 import { redirect } from 'next/navigation';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function CommercePage() {
+  // Redirect to home page - page not accessible yet
+  redirect('/');
+  
   // Sample commerce data
   const businesses = [
     {
@@ -305,9 +309,11 @@ export default function CommercePage() {
                 {/* Header with profile and basic info */}
                 <div className="flex items-start space-x-4 mb-4">
                   <div className="relative">
-                    <img 
+                    <Image 
                       src={business.profileImage} 
                       alt={business.name}
+                      width={64}
+                      height={64}
                       className="w-16 h-16 rounded-xl object-cover border-2 border-teal-400/30 group-hover:border-teal-400/50 transition-colors duration-300"
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-teal-400 to-cyan-400 rounded-full flex items-center justify-center">
