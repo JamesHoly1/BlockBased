@@ -114,13 +114,15 @@ export default function Home() {
               <div key={coin.id} className="group block">
                 <div className="relative bg-gradient-to-br from-black/70 to-black/60 backdrop-blur-lg rounded-xl border border-purple-400/10 p-4 transition-all duration-300">
                   <div className="flex items-center space-x-3">
-                    <Image 
-                      src={coin.profileImage} 
-                      alt={coin.name}
-                      width={80}
-                      height={80}
-                      className="w-12 h-12 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 transition-colors duration-200"
-                    />
+                    <div className="flex justify-center sm:justify-start w-full sm:w-auto">
+                      <Image 
+                        src={coin.profileImage} 
+                        alt={coin.name}
+                        width={80}
+                        height={80}
+                        className="w-14 h-14 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 transition-colors duration-200"
+                      />
+                    </div>
                     <div className="flex-1 min-w-0 hidden sm:block">
                       <div className="flex items-center space-x-1">
                         <h3 className={`text-base font-semibold ${montserrat.className} text-slate-200 transition-colors duration-200`}>
