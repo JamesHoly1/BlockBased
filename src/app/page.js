@@ -74,20 +74,41 @@ export default function Home() {
     },
     {
       id: 12,
+      name: "Build",
+      cashtag: "$BUILD",
+      profileImage: "/buildlogo.jpg",
+      description: "Building the future of decentralized applications"
+    },
+    {
+      id: 9,
+      name: "Dog",
+      cashtag: "$DOG",
+      profileImage: "/doglogo.jpg",
+      description: "The goodest boy in the crypto space"
+    },
+    {
+      id: 8,
+      name: "Mog",
+      cashtag: "$MOG",
+      profileImage: "/moglogo.jpg",
+      description: "Mogging the competition with style"
+    },
+    {
+      id: 13,
       name: "Pudgy Penguins",
       cashtag: "$PENGU",
       profileImage: "/penguinlogo.jpg",
       description: "Spreading good vibes across the meta"
     },
     {
-      id: 9,
+      id: 14,
       name: "Dogecoin",
       cashtag: "$DOGE",
       profileImage: "/dogecoinlogo.png",
       description: "An open source peer-to-peer cryptocurrency, favored by shibas worldwide"
     },
     {
-      id: 8,
+      id: 15,
       name: "dogwifhat",
       cashtag: "$WIF",
       profileImage: "/wiflogo.jpg",

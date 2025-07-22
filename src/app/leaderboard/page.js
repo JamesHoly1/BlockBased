@@ -46,7 +46,7 @@ export default function LeaderboardPage() {
                   </svg>
                 </span>
                 <div>
-                  <span className="font-semibold text-green-400">5 points</span> — Engage with our posts (Like, Retweet, Comment)
+                  <span className="font-semibold text-green-400">5 points</span> — Engage with our posts (Like, Retweet + Comment)
                 </div>
               </li>
               <li className="flex items-start">
