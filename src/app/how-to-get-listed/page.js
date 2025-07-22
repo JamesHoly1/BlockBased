@@ -13,21 +13,20 @@ export default function HowToGetListed() {
       <Header />
       
       {/* Main Content */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="pt-30 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 border border-purple-400/20 mb-8">
-              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
-              <p className="text-sm text-slate-400/80 tracking-wider font-medium">Getting Listed</p>
-            </div>
-            
+          <div className="text-center mb-5">
             <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ${montserrat.className} text-slate-200`}>
               How to Get Listed
             </h1>
-            <p className="text-xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed">
-              BlockBased is the only exclusive memecoin aggregator. Only memecoins that truly deserve a place will be found on BlockBased.
+            <p className="text-xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed mb-4">
+              BlockBased is the only exclusive memecoin aggregator. Only memecoins that truly deserve a place will be listed.
             </p>
+            <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-2 border border-purple-400/20 mb-8">
+              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
+              <p className="text-sm text-slate-400/80 tracking-wider font-medium">Quality, Engagement, Value, Consistency</p>
+            </div>
           </div>
 
           {/* Introduction Card */}
@@ -43,9 +42,9 @@ export default function HowToGetListed() {
                   Our Philosophy
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
-                  There are memecoins that don&apos;t get the attention they deserve. We want to change that. To use market cap doesn&apos;t matter, only activity.
+                  There are memecoins that don&apos;t get the attention they deserve. We want to change that. To us market cap doesn&apos;t matter, only activity.
                   You are not required to have a certain marketcap, and we do not take payment for listings. 
-                  We focus on quality, community engagement, and genuine value rather than financial requirements.
+                  We focus on quality, community engagement, and genuine value.
                 </p>
               </div>
             </div>
@@ -87,24 +86,41 @@ export default function HowToGetListed() {
                     Active Team Engagement
                   </h3>
                   <p className="text-slate-300">
-                    Project&apos;s must have an active team that posts regularly on <span className="text-green-400 font-semibold">X</span>.
+                    Project&apos;s must have an active team that posts regularly on <span className="text-blue-400 font-semibold">Twitter</span>.
                   </p>
                 </div>
               </div>
 
               {/* Requirement 3 */}
               <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
+                <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
                 <div>
                   <h3 className={`text-lg font-semibold mb-2 ${montserrat.className} text-slate-200`}>
                     BlockBased Engagement
                   </h3>
                   <p className="text-slate-300">
                     It isn&apos;t mandatory to engage with BlockBased, but it would definitely help to get noticed.
+                  </p>
+                </div>
+              </div>
+
+              {/* Requirement 4: Consistency */}
+              <div className="flex items-start space-x-4">
+                <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className={`text-lg font-semibold mb-2 ${montserrat.className} text-slate-200`}>
+                    Consistency
+                  </h3>
+                  <p className="text-slate-300">
+                    Each project will go into a review process to monitor their consistency.
                   </p>
                 </div>
               </div>
