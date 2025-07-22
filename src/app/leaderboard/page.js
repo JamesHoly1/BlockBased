@@ -141,7 +141,7 @@ export default function LeaderboardPage() {
                 <tr className="border-b border-green-400/20">
                   <th className="py-2 px-4 text-green-400 text-lg">Rank</th>
                   <th className="py-2 px-4 text-green-400 text-lg">Name</th>
-                  <th className="py-2 px-4 text-green-400 text-lg">X Username</th>
+                  <th className="py-2 px-4 text-green-400 text-lg">Username</th>
                   <th className="py-2 px-4 text-green-400 text-lg">Points</th>
                 </tr>
               </thead>
