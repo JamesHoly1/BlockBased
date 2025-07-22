@@ -106,13 +106,13 @@ export default function Home() {
               Discover <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 ml-1">Memecoins</span>
             </h2>
             <p className="text-xl text-slate-300/90 max-w-3xl font-light leading-relaxed mb-8 text-center">
-              The only premium memecoin aggregator
+              The premium memecoin aggregator
             </p>
           </div>
           <div className="grid grid-cols-3 sm:grid-cols-4 gap-1 sm:gap-3 mb-2">
             {featuredMemes.slice(0, 12).map((coin) => (
               <div key={coin.id} className="group block">
-                <div className="relative bg-gradient-to-br from-black/70 to-black/60 backdrop-blur-lg rounded-xl border border-purple-400/10 p-4 transition-all duration-300">
+                <div className="relative bg-gradient-to-br from-black/70 to-black/60 backdrop-blur-lg rounded-xl sm:border border-purple-400/10 p-4 transition-all duration-300">
                   <div className="flex items-center space-x-3">
                     <div className="flex justify-center sm:justify-start w-full sm:w-auto">
                       <Image 
@@ -143,7 +143,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center w-full mt-6 mb-1">
             <div className="text-sm text-slate-400 mb-1 text-center">
-              <div className="block sm:inline">We will be launching soon, find out <a href="/how-to-get-listed" className="text-purple-400 hover:underline">how to get listed?</a></div>
+              <div className="block sm:inline">We will be launching soon, find out <a href="/how-to-get-listed" className="text-purple-400 hover:underline font-semibold">how to get listed?</a></div>
               <span className="hidden sm:inline mx-1">&middot;</span>
               <div className="block sm:inline mt-1 sm:mt-0"><a href="/leaderboard" className="text-green-400 hover:text-green-300 hover:underline font-semibold">Join our community leaderboard</a></div>
             </div>

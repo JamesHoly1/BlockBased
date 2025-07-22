@@ -26,7 +26,7 @@ export default function HowToGetListed() {
               How to Get Listed
             </h1>
             <p className="text-xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed">
-              BlockBased is the most exclusive memecoin aggregator. Only memecoins that truly deserve a place will be found on BlockBased.
+              BlockBased is the only exclusive memecoin aggregator. Only memecoins that truly deserve a place will be found on BlockBased.
             </p>
           </div>
 
@@ -43,6 +43,7 @@ export default function HowToGetListed() {
                   Our Philosophy
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
+                  There are memecoins that don&apos;t get the attention they deserve. We want to change that. To use market cap doesn&apos;t matter, only activity.
                   You are not required to have a certain marketcap, and we do not take payment for listings. 
                   We focus on quality, community engagement, and genuine value rather than financial requirements.
                 </p>
@@ -86,18 +87,18 @@ export default function HowToGetListed() {
                     Active Team Engagement
                   </h3>
                   <p className="text-slate-300">
-                    Project&apos;s must have an active team that posts regularly on <span className="text-blue-400 font-semibold">Twitter</span>.
+                    Project&apos;s must have an active team that posts regularly on <span className="text-green-400 font-semibold">X</span>.
                   </p>
                 </div>
               </div>
 
               {/* Requirement 3 */}
               <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+                  <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
                 <div>
                   <h3 className={`text-lg font-semibold mb-2 ${montserrat.className} text-slate-200`}>
                     BlockBased Engagement
