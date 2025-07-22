@@ -86,7 +86,7 @@ export default function HowToGetListed() {
                     Active Team Engagement
                   </h3>
                   <p className="text-slate-300">
-                    Project's must have an active team that posts regularly on <span className="text-blue-400 font-semibold">Twitter</span>.
+                    Project&apos;s must have an active team that posts regularly on <span className="text-blue-400 font-semibold">Twitter</span>.
                   </p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ export default function HowToGetListed() {
                     BlockBased Engagement
                   </h3>
                   <p className="text-slate-300">
-                    It isn't mandatory to engage with BlockBased, but it would definitely help to get noticed.
+                    It isn&apos;t mandatory to engage with BlockBased, but it would definitely help to get noticed.
                   </p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export default function HowToGetListed() {
                   Important!
                 </h3>
                 <p className="text-slate-300 leading-relaxed">
-                  Just because your project got listed, we will remove it if the project doesn't maintain consistency. 
+                  Just because your project got listed, we will remove it if the project doesn&apos;t maintain consistency. 
                   That being said, projects that have been removed can be relisted again.
                 </p>
               </div>
