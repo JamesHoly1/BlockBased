@@ -21,7 +21,7 @@ export default function Home() {
       name: "Brett",
       cashtag: "$BRETT",
       profileImage: "/bretlogo.jpg",
-      description: "Brett is the legendary character from Matt Furie's Boys' club comic. He has become the blue mascot of the blue chain"
+      description: "Brett is the legendary character from Matt Furie's Boys club comic. He has become the blue mascot of the blue chain"
     },
     {
       id: 3,
@@ -109,21 +109,21 @@ export default function Home() {
               The only premium memecoin aggregator
             </p>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-3 mb-2">
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-1 sm:gap-3 mb-2">
             {featuredMemes.slice(0, 12).map((coin) => (
-              <Link href={`/projects/memes/${coin.name.toLowerCase().replace(/\s+/g, '-')}`} key={coin.id} className="group block">
-                <div className="relative bg-gradient-to-br from-black/70 to-black/60 backdrop-blur-lg rounded-xl border border-purple-400/10 p-4 group-hover:border-purple-400/30 transition-all duration-300 group-hover:scale-[1.01]">
+              <div key={coin.id} className="group block">
+                <div className="relative bg-gradient-to-br from-black/70 to-black/60 backdrop-blur-lg rounded-xl border border-purple-400/10 p-4 transition-all duration-300">
                   <div className="flex items-center space-x-3">
                     <Image 
                       src={coin.profileImage} 
                       alt={coin.name}
                       width={80}
                       height={80}
-                      className="w-20 h-20 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 group-hover:border-purple-400/40 transition-colors duration-200"
+                      className="w-12 h-12 sm:w-12 sm:h-12 rounded-lg object-cover border border-purple-400/20 transition-colors duration-200"
                     />
                     <div className="flex-1 min-w-0 hidden sm:block">
                       <div className="flex items-center space-x-1">
-                        <h3 className={`text-base font-semibold ${montserrat.className} text-slate-200 group-hover:text-white transition-colors duration-200`}>
+                        <h3 className={`text-base font-semibold ${montserrat.className} text-slate-200 transition-colors duration-200`}>
                           {coin.name}
                         </h3>
                         <span className="text-xs text-purple-400 font-mono bg-purple-400/10 px-1.5 py-0.5 rounded">
@@ -136,7 +136,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
           <div className="flex flex-col items-center w-full mt-6 mb-1">
