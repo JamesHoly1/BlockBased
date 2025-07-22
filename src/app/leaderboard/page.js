@@ -1,462 +1,241 @@
+"use client";
+
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import Header from "../components/header.js";
+import leaderboard from './data';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function LeaderboardPage() {
-  // Redirect to home page - page not accessible yet
-  redirect('/');
-  // Sample leaderboard data
-  const leaderboard = [
-    {
-      id: 1,
-      rank: 1,
-      username: "CryptoWhale",
-      handle: "@cryptowhale",
-      points: 15420,
-      tweets: 89,
-      followers: "125K",
-      profileImage: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=64&h=64&fit=crop&crop=face",
-      description: "Top crypto influencer and early BlockBased adopter. Sharing insights daily!",
-      badges: ["Verified", "Top Contributor"],
-      socialLinks: {
-        twitter: "https://twitter.com/cryptowhale",
-        telegram: "https://t.me/cryptowhale",
-        website: "https://cryptowhale.com"
-      }
-    },
-    {
-      id: 2,
-      rank: 2,
-      username: "DeFiQueen",
-      handle: "@defiqueen",
-      points: 12890,
-      tweets: 67,
-      followers: "89K",
-      profileImage: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=64&h=64&fit=crop&crop=face",
-      description: "DeFi enthusiast and BlockBased community leader. Building the future of finance!",
-      badges: ["Verified", "Community Leader"],
-      socialLinks: {
-        twitter: "https://twitter.com/defiqueen",
-        telegram: "https://t.me/defiqueen",
-        website: "https://defiqueen.com"
-      }
-    },
-    {
-      id: 3,
-      rank: 3,
-      username: "MemeLord",
-      handle: "@memelord",
-      points: 11230,
-      tweets: 156,
-      followers: "234K",
-      profileImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=64&h=64&fit=crop&crop=face",
-      description: "Meme coin expert and viral content creator. Making crypto fun and accessible!",
-      badges: ["Verified", "Content Creator"],
-      socialLinks: {
-        twitter: "https://twitter.com/memelord",
-        telegram: "https://t.me/memelord",
-        website: "https://memelord.com"
-      }
-    },
-    {
-      id: 4,
-      rank: 4,
-      username: "TechGuru",
-      handle: "@techguru",
-      points: 9870,
-      tweets: 45,
-      followers: "67K",
-      profileImage: "https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=64&h=64&fit=crop&crop=face",
-      description: "Blockchain developer and technical analyst. Deep dives into crypto fundamentals.",
-      badges: ["Verified", "Developer"],
-      socialLinks: {
-        twitter: "https://twitter.com/techguru",
-        telegram: "https://t.me/techguru",
-        website: "https://techguru.com"
-      }
-    },
-    {
-      id: 5,
-      rank: 5,
-      username: "TradingPro",
-      handle: "@tradingpro",
-      points: 8760,
-      tweets: 78,
-      followers: "156K",
-      profileImage: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=64&h=64&fit=crop&crop=face",
-      description: "Professional trader and market analyst. Sharing profitable trading strategies.",
-      badges: ["Verified", "Trader"],
-      socialLinks: {
-        twitter: "https://twitter.com/tradingpro",
-        telegram: "https://t.me/tradingpro",
-        website: "https://tradingpro.com"
-      }
-    },
-    {
-      id: 6,
-      rank: 6,
-      username: "CryptoArtist",
-      handle: "@cryptoartist",
-      points: 7650,
-      tweets: 92,
-      followers: "45K",
-      profileImage: "https://images.unsplash.com/photo-1546527868-ccb7ee7dfa6a?w=64&h=64&fit=crop&crop=face",
-      description: "NFT artist and digital creator. Bridging art and blockchain technology.",
-      badges: ["Verified", "Artist"],
-      socialLinks: {
-        twitter: "https://twitter.com/cryptoartist",
-        telegram: "https://t.me/cryptoartist",
-        website: "https://cryptoartist.com"
-      }
-    },
-    {
-      id: 7,
-      rank: 7,
-      username: "BlockchainBabe",
-      handle: "@blockchainbabe",
-      points: 6540,
-      tweets: 123,
-      followers: "78K",
-      profileImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=64&h=64&fit=crop&crop=face",
-      description: "Crypto educator and community builder. Making blockchain accessible to everyone.",
-      badges: ["Verified", "Educator"],
-      socialLinks: {
-        twitter: "https://twitter.com/blockchainbabe",
-        telegram: "https://t.me/blockchainbabe",
-        website: "https://blockchainbabe.com"
-      }
-    },
-    {
-      id: 8,
-      rank: 8,
-      username: "DegenApe",
-      handle: "@degenape",
-      points: 5430,
-      tweets: 234,
-      followers: "112K",
-      profileImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=64&h=64&fit=crop&crop=face",
-      description: "High-risk, high-reward trader. Living life on the edge of DeFi!",
-      badges: ["Verified", "Degen"],
-      socialLinks: {
-        twitter: "https://twitter.com/degenape",
-        telegram: "https://t.me/degenape",
-        website: "https://degenape.com"
-      }
-    },
-    {
-      id: 9,
-      rank: 9,
-      username: "StableCoinKing",
-      handle: "@stablecoinking",
-      points: 4320,
-      tweets: 56,
-      followers: "34K",
-      profileImage: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=64&h=64&fit=crop&crop=face",
-      description: "Stablecoin expert and yield farming specialist. Conservative DeFi strategies.",
-      badges: ["Verified", "Stablecoin Expert"],
-      socialLinks: {
-        twitter: "https://twitter.com/stablecoinking",
-        telegram: "https://t.me/stablecoinking",
-        website: "https://stablecoinking.com"
-      }
-    },
-    {
-      id: 10,
-      rank: 10,
-      username: "CryptoNewbie",
-      handle: "@cryptonewbie",
-      points: 3210,
-      tweets: 89,
-      followers: "23K",
-      profileImage: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=64&h=64&fit=crop&crop=face",
-      description: "New to crypto but learning fast! Sharing my journey and discoveries.",
-      badges: ["Rising Star", "Learner"],
-      socialLinks: {
-        twitter: "https://twitter.com/cryptonewbie",
-        telegram: "https://t.me/cryptonewbie",
-        website: "https://cryptonewbie.com"
-      }
-    },
-    {
-      id: 11,
-      rank: 11,
-      username: "MiningMaster",
-      handle: "@miningmaster",
-      points: 2980,
-      tweets: 34,
-      followers: "19K",
-      profileImage: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=64&h=64&fit=crop&crop=face",
-      description: "Crypto mining expert and hardware specialist. Building mining rigs and sharing knowledge.",
-      badges: ["Verified", "Miner"],
-      socialLinks: {
-        twitter: "https://twitter.com/miningmaster",
-        telegram: "https://t.me/miningmaster",
-        website: "https://miningmaster.com"
-      }
-    },
-    {
-      id: 12,
-      rank: 12,
-      username: "Web3Wizard",
-      handle: "@web3wizard",
-      points: 2650,
-      tweets: 67,
-      followers: "28K",
-      profileImage: "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=64&h=64&fit=crop&crop=face",
-      description: "Web3 developer and smart contract expert. Building the decentralized future.",
-      badges: ["Verified", "Developer"],
-      socialLinks: {
-        twitter: "https://twitter.com/web3wizard",
-        telegram: "https://t.me/web3wizard",
-        website: "https://web3wizard.com"
-      }
-    },
-  ];
+  // Sort leaderboard by points descending
+  const sorted = [...leaderboard].sort((a, b) => b.points - a.points);
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-slate-900 via-black to-slate-900 ${montserrat.className}`}>
-      {/* Hero Section */}
-      <div className="relative">
-        {/* Background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-cyan-400/10 to-blue-400/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 border border-blue-400/20 mb-8">
-              <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
-              <p className="text-sm text-slate-400/80 tracking-wider font-medium">Community Competition</p>
+    <div className="min-h-screen bg-gradient-to-b from-black/85 via-black/75 to-black/85">
+      {/* Header */}
+      <Header />
+      
+      {/* Main Content */}
+      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 border border-green-400/20 mb-8">
+              <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-pulse"></div>
+              <p className="text-sm text-green-300/80 tracking-wider font-medium">Community Leaderboard</p>
             </div>
             
-            <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 ${montserrat.className} text-slate-200`}>
-              Leaderboard
+            <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 ${montserrat.className} text-slate-200`}>
+              BlockBased Leaderboard
             </h1>
-            <p className="text-xl sm:text-2xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed">
-              Compete with the best crypto influencers and earn rewards for your social media engagement
+            <p className="text-xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed mb-4">
+              Your interactions with BlockBased will earn you points, the top 100 will receive ecosystem rewards.
             </p>
+            <div className="text-green-400 font-semibold text-lg">Top community shillers and supporters</div>
           </div>
-        </div>
-      </div>
 
-      {/* How It Works Section */}
-      <div className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        {/* Background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 bg-gradient-to-l from-cyan-400/5 to-blue-400/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            {/* Section Badge */}
-            <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-blue-400/20 mb-6 sm:mb-8">
-              <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full animate-pulse"></div>
-              <span className="text-xs sm:text-sm text-slate-300/90 tracking-wider font-medium">How to Earn Points</span>
-            </div>
-            
-            <h3 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 ${montserrat.className} text-slate-200 drop-shadow-lg`}>
-              Get Rewarded
-            </h3>
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300/95 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
-              Get rewarded for promoting BlockBased and building the crypto community
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-blue-400/20 p-8 group-hover:border-blue-400/40 group-hover:bg-gradient-to-br group-hover:from-black/70 group-hover:to-black/50 transition-all duration-500 group-hover:scale-[1.02]">
-                <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-blue-400/25">
-                    <span className="text-2xl">🐦</span>
-                  </div>
-                  <div className="space-y-3">
-                    <h4 className={`text-xl font-bold ${montserrat.className} text-slate-200 group-hover:text-white transition-colors duration-300`}>
-                      Tweet About BlockBased
-                    </h4>
-                    <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
-                      Share your thoughts, reviews, or experiences with BlockBased on Twitter
-                    </p>
-                    <div className="text-2xl font-bold text-blue-400">+100 points</div>
-                  </div>
+          {/* Participation Rules Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* How to Earn Points */}
+            <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-green-400/20 p-8">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
+                <h2 className={`text-2xl font-bold ${montserrat.className} text-slate-200`}>
+                  How to Earn Points
+                </h2>
               </div>
-            </div>
-            
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-emerald-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-green-400/20 p-8 group-hover:border-green-400/40 group-hover:bg-gradient-to-br group-hover:from-black/70 group-hover:to-black/50 transition-all duration-500 group-hover:scale-[1.02]">
-                <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-green-400/25">
-                    <span className="text-2xl">📱</span>
-                  </div>
-                  <div className="space-y-3">
-                    <h4 className={`text-xl font-bold ${montserrat.className} text-slate-200 group-hover:text-white transition-colors duration-300`}>
-                      Engage with Community
-                    </h4>
-                    <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
-                      Like, retweet, and comment on BlockBased-related content
-                    </p>
-                    <div className="text-2xl font-bold text-green-400">+25 points</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-purple-400/20 p-8 group-hover:border-purple-400/40 group-hover:bg-gradient-to-br group-hover:from-black/70 group-hover:to-black/50 transition-all duration-500 group-hover:scale-[1.02]">
-                <div className="flex flex-col items-center text-center space-y-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-purple-400/25">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <div className="space-y-3">
-                    <h4 className={`text-xl font-bold ${montserrat.className} text-slate-200 group-hover:text-white transition-colors duration-300`}>
-                      Create Viral Content
-                    </h4>
-                    <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
-                      Create memes, videos, or threads that go viral
-                    </p>
-                    <div className="text-2xl font-bold text-purple-400">+500 points</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Leaderboard Section */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 -mt-8">
-        <div className="text-center mb-12">
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 ${montserrat.className} text-slate-200 drop-shadow-lg`}>
-            Top Performers
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-300/95 max-w-3xl mx-auto font-light leading-relaxed drop-shadow-md">
-            See who&apos;s leading the BlockBased community
-          </p>
-        </div>
-
-        <div className="grid gap-6 max-w-6xl mx-auto">
-          {leaderboard.map((user) => (
-            <Link 
-              href={`/profile/${user.handle.replace('@', '')}`} 
-              key={user.id}
-              className="group relative"
-            >
-              {/* Card glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               
-              {/* Main card */}
-              <div className="relative bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-blue-400/20 p-6 group-hover:border-blue-400/40 group-hover:bg-gradient-to-br group-hover:from-black/70 group-hover:to-black/50 transition-all duration-500 group-hover:scale-[1.02]">
-                <div className="flex items-center gap-6">
-                  {/* Rank */}
-                  <div className="flex-shrink-0">
-                    {user.rank <= 3 ? (
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${
-                        user.rank === 1 ? 'bg-yellow-500/20 text-yellow-400 border-2 border-yellow-400' :
-                        user.rank === 2 ? 'bg-slate-400/20 text-slate-300 border-2 border-slate-400' :
-                        'bg-orange-500/20 text-orange-400 border-2 border-orange-400'
-                      }`}>
-                        {user.rank === 1 ? '🥇' : user.rank === 2 ? '🥈' : '🥉'}
-                      </div>
-                    ) : (
-                      <div className="w-12 h-12 rounded-full bg-slate-400/10 flex items-center justify-center text-xl font-bold text-slate-200 border border-slate-400/20">
-                        #{user.rank}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Profile Image */}
-                  <div className="flex-shrink-0">
-                    <img 
-                      src={user.profileImage} 
-                      alt={user.username}
-                      className="w-16 h-16 rounded-xl object-cover border-2 border-blue-400/30 group-hover:border-blue-400/50 transition-colors duration-300"
-                    />
-                  </div>
-
-                  {/* User Info */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2 mb-1">
-                      <h3 className={`text-lg font-bold ${montserrat.className} text-slate-200 group-hover:text-white transition-colors duration-300`}>
-                        {user.username}
-                      </h3>
-                      <span className="text-slate-400">{user.handle}</span>
-                    </div>
-                    <p className="text-slate-400 text-sm line-clamp-2 mb-3">
-                      {user.description}
-                    </p>
-                    <div className="flex items-center gap-4">
-                      {user.badges.map((badge, badgeIndex) => (
-                        <span 
-                          key={badgeIndex}
-                          className="px-2 py-1 text-xs font-medium bg-blue-400/10 text-blue-300 rounded-md border border-blue-400/20"
-                        >
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex items-center gap-6 text-sm mt-2">
-                      <span className="text-slate-400">
-                        <span className="text-slate-200 font-medium">{user.tweets}</span> tweets
-                      </span>
-                      <span className="text-slate-400">
-                        <span className="text-slate-200 font-medium">{user.followers}</span> followers
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Points */}
-                  <div className="flex-shrink-0 text-right">
-                    <div className="text-3xl font-bold text-slate-200 mb-1">
-                      {user.points.toLocaleString()}
-                    </div>
-                    <div className="text-sm text-slate-400">points</div>
-                  </div>
-
-                  {/* Arrow */}
-                  <div className="flex-shrink-0 text-slate-400 group-hover:text-blue-400 transition-colors">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
                   </div>
+                  <div>
+                    <h3 className={`text-lg font-semibold mb-1 ${montserrat.className} text-slate-200`}>
+                      Engage with our posts
+                    </h3>
+                    <p className="text-slate-300 text-sm">Like, Share and Comment on BlockBased content</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7.828 11H20a2 2 0 010 4H7.828l5.586 5.586a2 2 0 11-2.828 2.828L1.414 12l9.172-9.172a2 2 0 012.828 2.828L7.828 11z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className={`text-lg font-semibold mb-1 ${montserrat.className} text-slate-200`}>
+                      Mention us to others
+                    </h3>
+                    <p className="text-slate-300 text-sm">Tag BlockBased when talking to other people</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className={`text-lg font-semibold mb-1 ${montserrat.className} text-slate-200`}>
+                      Create content
+                    </h3>
+                    <p className="text-slate-300 text-sm">Memes, Threads, and other creative content</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className={`text-lg font-semibold mb-1 ${montserrat.className} text-slate-200`}>
+                      Spread the word
+                    </h3>
+                    <p className="text-slate-300 text-sm">Tell meme projects about BlockBased</p>
+                  </div>
                 </div>
               </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+            </div>
 
-      {/* CTA Section */}
-      <div className="relative py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8">
-        {/* Background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 bg-gradient-to-r from-blue-400/5 to-cyan-400/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 bg-gradient-to-l from-cyan-400/5 to-blue-400/5 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-3xl mx-auto text-center">
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 ${montserrat.className} text-slate-200 drop-shadow-lg`}>
-            Ready to Join the Competition?
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-300/95 mb-8 sm:mb-10 font-light leading-relaxed drop-shadow-md">
-            Start earning points today and climb the BlockBased leaderboard
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-2xl text-lg transition-all duration-300 hover:scale-105 shadow-2xl shadow-blue-500/25">
-              Connect Twitter
-            </button>
-            <button className="bg-black/30 backdrop-blur-sm hover:bg-black/50 text-slate-200 hover:text-white font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-2xl text-lg border border-slate-400/20 hover:border-slate-400/40 transition-all duration-300 hover:scale-105">
-              View Rules
-            </button>
+            {/* Update Schedule & Rewards */}
+            <div className="space-y-6">
+              {/* Update Schedule */}
+              <div className="bg-gradient-to-br from-blue-400/10 to-purple-400/10 backdrop-blur-xl rounded-2xl border border-blue-400/30 p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className={`text-xl font-bold ${montserrat.className} text-slate-200`}>
+                    Update Schedule
+                  </h3>
+                </div>
+                <p className="text-slate-300">
+                  The Leaderboard will be updated every <span className="text-blue-400 font-semibold">2 hours</span>
+                </p>
+              </div>
+
+              {/* Points System */}
+              <div className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 backdrop-blur-xl rounded-2xl border border-green-400/30 p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                    </svg>
+                  </div>
+                  <h3 className={`text-xl font-bold ${montserrat.className} text-slate-200`}>
+                    Points System
+                  </h3>
+                </div>
+                <p className="text-slate-300">
+                  Each engagement/mention = <span className="text-green-400 font-semibold">5 points</span>
+                </p>
+              </div>
+
+              {/* Rewards */}
+              <div className="bg-gradient-to-br from-yellow-400/10 to-orange-400/10 backdrop-blur-xl rounded-2xl border border-yellow-400/30 p-6">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className={`text-xl font-bold ${montserrat.className} text-slate-200`}>
+                    Rewards
+                  </h3>
+                </div>
+                <p className="text-slate-300">
+                  The top <span className="text-yellow-400 font-semibold">100</span> will receive ecosystem rewards
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Leaderboard Table */}
+          <div className="bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-green-400/20 p-8">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className={`text-3xl font-bold ${montserrat.className} text-slate-200`}>
+                Current Rankings
+              </h2>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-sm text-slate-400">Live updates every 2hrs</span>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="min-w-full">
+                <thead>
+                  <tr className="border-b border-green-400/20">
+                    <th className="py-4 px-6 text-left text-green-400 font-semibold text-lg">Rank</th>
+                    <th className="py-4 px-6 text-left text-green-400 font-semibold text-lg">Name</th>
+                    <th className="py-4 px-6 text-left text-green-400 font-semibold text-lg">X Username</th>
+                    <th className="py-4 px-6 text-left text-green-400 font-semibold text-lg">Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sorted.map((user, i) => (
+                    <tr key={user.xUsername} className="border-b border-slate-700/30 hover:bg-green-400/5 transition-all duration-200">
+                      <td className="py-4 px-6">
+                        <div className="flex items-center space-x-3">
+                          {i < 3 ? (
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
+                              i === 0 ? 'bg-gradient-to-r from-yellow-400 to-orange-400' :
+                              i === 1 ? 'bg-gradient-to-r from-gray-400 to-gray-500' :
+                              'bg-gradient-to-r from-amber-600 to-amber-700'
+                            }`}>
+                              {i + 1}
+                            </div>
+                          ) : (
+                            <span className="text-xl font-bold text-slate-300">{i + 1}</span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="py-4 px-6">
+                        <span className="text-slate-200 font-semibold text-lg">{user.name}</span>
+                      </td>
+                      <td className="py-4 px-6">
+                        <span className="text-green-200 font-mono text-lg">{user.xUsername}</span>
+                      </td>
+                      <td className="py-4 px-6">
+                        <span className="text-green-400 font-bold text-xl">{user.points}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Empty State */}
+            {sorted.length === 0 && (
+              <div className="text-center py-12">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className={`text-xl font-semibold mb-2 ${montserrat.className} text-slate-200`}>
+                  No participants yet
+                </h3>
+                <p className="text-slate-400">Be the first to start earning points!</p>
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 } 

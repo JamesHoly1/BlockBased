@@ -61,6 +61,7 @@ export default function Header() {
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 bg-black/50 backdrop-blur-xl rounded-lg border border-slate-400/20 mt-2 mb-4">
                             {/* Mobile navigation links removed - coming soon */}
+                            <Link href="/leaderboard" onClick={closeMobileMenu} className="block px-4 py-2 rounded-lg text-green-400 font-semibold hover:bg-green-400/10 hover:text-green-300 transition-all text-lg">Leaderboard</Link>
                         </div>
                     </div>
                 )}

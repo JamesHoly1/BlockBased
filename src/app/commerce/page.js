@@ -5,8 +5,6 @@ import { redirect } from 'next/navigation';
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function CommercePage() {
-  // Redirect to home page - page not accessible yet
-  redirect('/');
   // Sample commerce data
   const businesses = [
     {

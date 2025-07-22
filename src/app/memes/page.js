@@ -1,16 +1,130 @@
+"use client";
+
 import { Montserrat } from 'next/font/google';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
+import { useState } from 'react';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function MemesPage() {
-  // Redirect to home page - page not accessible yet
-  redirect('/');
+  const [marketCapFilter, setMarketCapFilter] = useState('all');
+
   // Sample memecoin data
   const memecoins = [
     {
       id: 1,
+      name: "Useless Coin",
+      cashtag: "$USELESS",
+      price: "$0.3264",
+      change24h: "+5.8%",
+      marketCap: "$326,943,501",
+      volume24h: "$51,840,390",
+      profileImage: "/uselesscoin.png",
+      description: "A useless bio for a useless coin",
+      socialLinks: {
+        twitter: "https://twitter.com/uselesscoin",
+        telegram: "https://t.me/uselesscoin",
+        website: "https://uselesscoin.com"
+      }
+    },
+    {
+      id: 2,
+      name: "Brett",
+      cashtag: "$BRETT",
+      price: "$0.06226",
+      change24h: "+1.9%",
+      marketCap: "$617,087,304",
+      volume24h: "$58,060,961",
+      profileImage: "/bretlogo.jpg",
+      description: "Brett is the legendary character from Matt Furie's Boys' club comic. He has become the blue mascot of the blue chain",
+      socialLinks: {
+        twitter: "https://twitter.com/brett",
+        telegram: "https://t.me/brett",
+        website: "https://brett.com"
+      }
+    },
+    {
+      id: 3,
+      name: "Popcat",
+      cashtag: "$POPCAT",
+      price: "$0.4179",
+      change24h: "+0.3%",
+      marketCap: "$410,330,509",
+      volume24h: "$144,267,108",
+      profileImage: "/popcatlogo.jpg",
+      description: "The cat pops",
+      socialLinks: {
+        twitter: "https://twitter.com/popcat",
+        telegram: "https://t.me/popcat",
+        website: "https://popcat.com"
+      }
+    },
+    {
+      id: 4,
+      name: "Non-Playable Coin",
+      cashtag: "$NPC",
+      price: "$0.02372",
+      change24h: "+1.4%",
+      marketCap: "$190,723,496",
+      volume24h: "$9,458,226",
+      profileImage: "/npclogo.jpg",
+      description: "The first Memecoin-NFT hybrid",
+      socialLinks: {
+        twitter: "https://twitter.com/npccoin",
+        telegram: "https://t.me/npccoin",
+        website: "https://npccoin.com"
+      }
+    },
+    {
+      id: 5,
+      name: "Kori",
+      cashtag: "$KORI",
+      price: "$0.03402",
+      change24h: "+5.4%",
+      marketCap: "$34,476,750",
+      volume24h: "$13,024,921",
+      profileImage: "/korilogo.jpg",
+      description: "The most famous pom on the internet",
+      socialLinks: {
+        twitter: "https://twitter.com/koricoin",
+        telegram: "https://t.me/koricoin",
+        website: "https://koricoin.com"
+      }
+    },
+    {
+      id: 6,
+      name: "Unicorn Fart Dust",
+      cashtag: "$UFD",
+      price: "$0.04259",
+      change24h: "+4.6%",
+      marketCap: "$42,589,306",
+      volume24h: "$5,855,759",
+      profileImage: "/ufdlogo.jpg",
+      description: "It's Just Unicorn Fart Dust",
+      socialLinks: {
+        twitter: "https://twitter.com/ufdcoin",
+        telegram: "https://t.me/ufdcoin",
+        website: "https://ufdcoin.com"
+      }
+    },
+    {
+      id: 7,
+      name: "Pepe",
+      cashtag: "$PEPE",
+      price: "$0.0000129",
+      change24h: "+7.8%",
+      marketCap: "$5,587,644,359",
+      volume24h: "$6,122,403,846",
+      profileImage: "/pepelogo.jpg",
+      description: "The most memeable memecoin in existence",
+      socialLinks: {
+        twitter: "https://twitter.com/pepecoineth",
+        telegram: "https://t.me/pepecoineth",
+        website: "https://pepe.vip"
+      }
+    },
+    {
+      id: 8,
       name: "DogeCoin",
       cashtag: "$DOGE",
       price: "$0.082",
@@ -26,7 +140,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 2,
+      id: 9,
       name: "Shiba Inu",
       cashtag: "$SHIB",
       price: "$0.000023",
@@ -42,23 +156,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 3,
-      name: "Pepe",
-      cashtag: "$PEPE",
-      price: "$0.0000012",
-      change24h: "+45.2%",
-      marketCap: "$4.2B",
-      volume24h: "$1.2B",
-      profileImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=64&h=64&fit=crop&crop=face",
-      description: "The most memeable meme coin. Rare pepe vibes only!",
-      socialLinks: {
-        twitter: "https://twitter.com/pepecoineth",
-        telegram: "https://t.me/pepecoineth",
-        website: "https://pepe.vip"
-      }
-    },
-    {
-      id: 4,
+      id: 10,
       name: "Floki",
       cashtag: "$FLOKI",
       price: "$0.000089",
@@ -74,7 +172,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 5,
+      id: 11,
       name: "Bonk",
       cashtag: "$BONK",
       price: "$0.000034",
@@ -90,7 +188,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 6,
+      id: 12,
       name: "WIF",
       cashtag: "$WIF",
       price: "$2.34",
@@ -106,7 +204,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 7,
+      id: 13,
       name: "Book of Meme",
       cashtag: "$BOME",
       price: "$0.012",
@@ -122,7 +220,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 8,
+      id: 14,
       name: "Meme",
       cashtag: "$MEME",
       price: "$0.023",
@@ -138,7 +236,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 9,
+      id: 15,
       name: "Cat in a dogs world",
       cashtag: "$MEW",
       price: "$0.0045",
@@ -154,23 +252,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 10,
-      name: "Popcat",
-      cashtag: "$POPCAT",
-      price: "$0.00078",
-      change24h: "+23.4%",
-      marketCap: "$456M",
-      volume24h: "$89M",
-      profileImage: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=64&h=64&fit=crop&crop=face",
-      description: "Pop pop pop! The most popping meme coin around!",
-      socialLinks: {
-        twitter: "https://twitter.com/popcat",
-        telegram: "https://t.me/popcat",
-        website: "https://popcat.com"
-      }
-    },
-    {
-      id: 11,
+      id: 16,
       name: "Degen Ape",
       cashtag: "$DAPE",
       price: "$0.00012",
@@ -186,7 +268,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 12,
+      id: 17,
       name: "Moon",
       cashtag: "$MOON",
       price: "$0.000045",
@@ -202,7 +284,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 13,
+      id: 18,
       name: "Lambo",
       cashtag: "$LAMBO",
       price: "$0.000023",
@@ -218,7 +300,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 14,
+      id: 19,
       name: "Diamond Hands",
       cashtag: "$DIAMOND",
       price: "$0.000067",
@@ -234,7 +316,7 @@ export default function MemesPage() {
       }
     },
     {
-      id: 15,
+      id: 20,
       name: "HODL",
       cashtag: "$HODL",
       price: "$0.000089",
@@ -248,18 +330,75 @@ export default function MemesPage() {
         telegram: "https://t.me/hodlcoin",
         website: "https://hodlcoin.com"
       }
+    },
+    {
+      id: 21,
+      name: "Bonk",
+      cashtag: "$BONK",
+      price: "$0.0000345",
+      change24h: "+5.2%",
+      marketCap: "$2,667,427,059",
+      volume24h: "$2,741,929,509",
+      profileImage: "/bonklogo.jpg",
+      description: "The community token of web3",
+      socialLinks: {
+        twitter: "https://twitter.com/bonk_inu",
+        telegram: "https://t.me/bonk_inu",
+        website: "https://bonk.com"
+      }
+    },
+    {
+      id: 22,
+      name: "Shiba Inu",
+      cashtag: "$SHIB",
+      price: "$0.0000141",
+      change24h: "+2.4%",
+      marketCap: "$8,305,340,813",
+      volume24h: "$435,742,510",
+      profileImage: "/shiblogo.jpg",
+      description: "The first memecoin to take on Doge",
+      socialLinks: {
+        twitter: "https://twitter.com/shibatoken",
+        telegram: "https://t.me/shibainuthedogecoin",
+        website: "https://shibatoken.com"
+      }
     }
   ];
+
+  // Filter memecoins based on market cap
+  const filteredMemecoins = memecoins.filter(coin => {
+    if (marketCapFilter === 'all') return true;
+    
+    // Convert market cap to number (handle B, M, K suffixes)
+    let marketCapValue = coin.marketCap.replace(/[$,]/g, '');
+    if (marketCapValue.includes('B')) {
+      marketCapValue = parseFloat(marketCapValue.replace('B', '')) * 1000000000;
+    } else if (marketCapValue.includes('M')) {
+      marketCapValue = parseFloat(marketCapValue.replace('M', '')) * 1000000;
+    } else if (marketCapValue.includes('K')) {
+      marketCapValue = parseFloat(marketCapValue.replace('K', '')) * 1000;
+    } else {
+      marketCapValue = parseFloat(marketCapValue);
+    }
+    
+    switch (marketCapFilter) {
+      case 'under-100m':
+        return marketCapValue < 100000000;
+      case '100m-1b':
+        return marketCapValue >= 100000000 && marketCapValue < 1000000000;
+      case '1b-10b':
+        return marketCapValue >= 1000000000 && marketCapValue < 10000000000;
+      case 'over-10b':
+        return marketCapValue >= 10000000000;
+      default:
+        return true;
+    }
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-black to-slate-900">
       {/* Header */}
       <div className="relative">
-        {/* Background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-pink-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
-        </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
           <div className="text-center mb-8">
@@ -280,8 +419,37 @@ export default function MemesPage() {
 
       {/* Memecoins Grid */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 -mt-8">
+        {/* Filter Section */}
+        <div className="mb-8 flex justify-center">
+          <div className="bg-gradient-to-r from-black/40 to-black/20 backdrop-blur-xl rounded-2xl border border-purple-400/30 p-6 shadow-2xl">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
+                <label htmlFor="marketCapFilter" className="text-sm text-slate-300 font-medium">
+                  Market Cap Filter
+                </label>
+              </div>
+              <select
+                id="marketCapFilter"
+                value={marketCapFilter}
+                onChange={(e) => setMarketCapFilter(e.target.value)}
+                className="bg-black/60 border border-purple-400/40 rounded-xl px-4 py-2 text-slate-200 focus:outline-none focus:border-purple-400/60 focus:ring-2 focus:ring-purple-400/20 transition-all duration-300 min-w-[200px]"
+              >
+                <option value="all">All Market Caps</option>
+                <option value="under-100m">Under $100M</option>
+                <option value="100m-1b">$100M - $1B</option>
+                <option value="1b-10b">$1B - $10B</option>
+                <option value="over-10b">Over $10B</option>
+              </select>
+              <div className="text-xs text-slate-400 bg-slate-400/10 px-3 py-1 rounded-full">
+                {filteredMemecoins.length} results
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {memecoins.map((coin) => (
+          {filteredMemecoins.map((coin) => (
             <Link href={`/projects/memes/${coin.name.toLowerCase().replace(/\s+/g, '-')}`} key={coin.id} className="group relative">
               {/* Card glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400/10 to-pink-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
@@ -299,7 +467,7 @@ export default function MemesPage() {
                     />
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
                       <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
                       </svg>
                     </div>
                   </div>
@@ -313,7 +481,7 @@ export default function MemesPage() {
                         {coin.cashtag}
                       </span>
                     </div>
-                    <p className="text-slate-400 text-sm line-clamp-2">
+                    <p className="text-slate-400 text-sm line-clamp-1">
                       {coin.description}
                     </p>
                   </div>
@@ -343,21 +511,9 @@ export default function MemesPage() {
                       href={coin.socialLinks.twitter} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-500 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200"
+                      className="w-8 h-8 bg-gradient-to-r from-black to-gray-800 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200"
                     >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                      </svg>
-                    </a>
-                    <a 
-                      href={coin.socialLinks.telegram} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200"
-                    >
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                      </svg>
+                      <img src="/xlogo.svg" alt="X (Twitter)" className="w-4 h-4" />
                     </a>
                     <a 
                       href={coin.socialLinks.website} 
@@ -366,7 +522,7 @@ export default function MemesPage() {
                       className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center text-white hover:scale-110 transition-transform duration-200"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </a>
                   </div>
