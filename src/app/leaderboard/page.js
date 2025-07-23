@@ -9,8 +9,6 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 
 export default function LeaderboardPage() {
   const sorted = [...leaderboard].sort((a, b) => b.points - a.points);
-  const top2and3 = sorted.slice(1, 3);
-  const rest = sorted.slice(1);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black/85 via-black/75 to-black/85">
@@ -102,28 +100,6 @@ export default function LeaderboardPage() {
           </div>
         </div>
 
-        {/* Top 2 and 3 Cards */}
-        <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          {top2and3.map((user, i) => (
-            <div key={user.xUsername} className={`rounded-2xl p-6 flex flex-col items-center shadow-lg border-2 ${
-              i === 0 ? 'bg-gradient-to-br from-gray-400/20 to-gray-700/10 border-gray-400' :
-              'bg-gradient-to-br from-amber-700/20 to-amber-400/10 border-amber-600'
-            }`}>
-              <div className="mb-2">
-                <span className={`inline-block w-12 h-12 rounded-full text-white font-bold text-2xl flex items-center justify-center ${
-                  i === 0 ? 'bg-gradient-to-r from-gray-400 to-gray-500' :
-                  'bg-gradient-to-r from-amber-600 to-amber-700'
-                }`}>
-                  {i + 2}
-                </span>
-              </div>
-              <div className="text-lg font-bold text-slate-200 mb-1">{user.name}</div>
-              <div className="text-green-200 font-mono mb-1">{user.xUsername}</div>
-              <div className="text-green-400 font-bold text-xl">{user.points} pts</div>
-            </div>
-          ))}
-        </div>
-
         {/* Leaderboard Table */}
         <div className="max-w-4xl mx-auto bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-xl rounded-2xl border border-green-400/20 p-6">
           <div className="flex items-center justify-between mb-6">
@@ -146,9 +122,9 @@ export default function LeaderboardPage() {
                 </tr>
               </thead>
               <tbody>
-                {rest.map((user, i) => (
+                {sorted.map((user, i) => (
                   <tr key={user.xUsername} className="border-b border-slate-700/30 hover:bg-green-400/5 transition-all">
-                    <td className="py-3 px-4 font-bold text-xl text-green-300">{i + 2}</td>
+                    <td className="py-3 px-4 font-bold text-xl text-green-300">{i + 1}</td>
                     <td className="py-3 px-4 text-slate-200 font-semibold">{user.name}</td>
                     <td className="py-3 px-4 text-green-200 font-mono">{user.xUsername}</td>
                     <td className="py-3 px-4 text-green-400 font-bold text-lg">{user.points}</td>
@@ -157,7 +133,7 @@ export default function LeaderboardPage() {
               </tbody>
             </table>
           </div>
-          {rest.length === 0 && (
+          {sorted.length === 0 && (
             <div className="text-center py-12">
               <div className="w-16 h-16 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
