@@ -2,9 +2,9 @@
 // Add or edit entries manually. Each engagement/mention = 5 points.
 
 const leaderboard = [
-  { name: "Nar🐚Yaya", xUsername: "@narsingana", points: 5 },
+  { name: "Nar🐚Yaya", xUsername: "@narsingana", points: 15 },
+  { name: "Master of Wen", xUsername: "@masterofwen", points: 10 },
   { name: "Gimme Crypto", xUsername: "@gimmedacrypto", points: 5 },
-  { name: "Master of Wen", xUsername: "@masterofwen", points: 5 },
 ]; 
 
 /* const leaderboard = [
