@@ -21,7 +21,7 @@ export default function HowToGetListed() {
               How to Get Listed
             </h1>
             <p className="text-xl text-slate-300/90 max-w-3xl mx-auto font-light leading-relaxed mb-4">
-              BlockBased is the premium memecoin aggregator. Only memecoins that truly deserve a place will be listed.
+              BlockBased is the memecoin aggregator. Only memecoins that truly deserve a place will be listed.
             </p>
             <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-2 border border-purple-400/20 mb-8">
               <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
@@ -86,7 +86,7 @@ export default function HowToGetListed() {
                     Active Team Engagement
                   </h3>
                   <p className="text-slate-300">
-                    Project&apos;s must have an active team that posts regularly on <span className="text-blue-400 font-semibold">X</span>.
+                    Project&apos;s must have an active team that posts regularly on X.
                   </p>
                 </div>
               </div>
@@ -124,47 +124,27 @@ export default function HowToGetListed() {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Fast Track Section */}
-          <div className="bg-gradient-to-br from-purple-400/10 to-pink-400/10 backdrop-blur-xl rounded-2xl border border-purple-400/30 p-8 mb-8">
-            <div className="flex items-start space-x-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className={`text-xl font-bold mb-3 ${montserrat.className} text-slate-200`}>
-                  Fast Track
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  <span className="text-yellow-400 font-semibold">100 votes on Crypto Billboards</span> (Coming soon)
-                </p>
+              {/* Fast Track */}
+              <div className="flex items-start space-x-4">
+                <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className={`text-lg font-semibold mb-2 ${montserrat.className} text-slate-200`}>
+                    Fast Track
+                  </h3>
+                  <p className="text-slate-300">
+                    100 votes on Crypto Billboards (Coming soon)
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Important Notice */}
-          <div className="bg-gradient-to-br from-red-400/10 to-orange-400/10 backdrop-blur-xl rounded-2xl border border-red-400/30 p-8 mb-8">
-            <div className="flex items-start space-x-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-red-400 to-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className={`text-xl font-bold mb-3 ${montserrat.className} text-slate-200`}>
-                  Important!
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Just because your project got listed, we will remove it if the project doesn&apos;t maintain consistency. 
-                  That being said, projects that have been removed can be relisted again.
-                </p>
-              </div>
-            </div>
-          </div>
+
 
           {/* Contact Section */}
           <div className="text-center">
